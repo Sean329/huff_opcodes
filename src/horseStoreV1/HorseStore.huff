@@ -1,0 +1,13 @@
+// 60008060093d393df3 -- contract creation bytecode
+// translate to "take the binary after me, and stick it onchain"
+
+#define macro MAIN() = takes(0) returns(0) {
+    0x00 //the PUSH opcode is ignored because Huff knows it; Top [0] Bottom
+    // 0x02 // [2,0]
+    calldataload // [calldata(32)]
+    0xe0 // 224 bits or say 28 bytes to right shift, because we only want to keep the first 4 bytes of calldata 
+            // which is meant to be the function selector; [0xe0, calldata(32)]
+    shr // [function_selector]
+
+}
+ 
