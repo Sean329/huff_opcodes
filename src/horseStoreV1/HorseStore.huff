@@ -57,7 +57,7 @@
 
 #define macro READ_NUMBER_OF_HORSES() = takes(0) returns(0){
     // 1. get the storage slot
-    NUMBER_OF_HORSES_STORAGE_SLOT // [storage_slot]
+    [NUMBER_OF_HORSES_STORAGE_SLOT] // [storage_slot]
     // 2. load the value into memory
     sload // [value]
     0x00 // [0, value] 
