@@ -21,4 +21,9 @@ abstract contract Base_TestV1 is Test {
         horseStore.updateHorseNumber(numberOfHorses);
         assertEq(horseStore.readNumberOfHorses(), numberOfHorses);
     }
+
+    function testFuzzWriteValue(uint256 numberOfHorses) public {
+        horseStore.updateHorseNumber(numberOfHorses);
+        assertEq(horseStore.readNumberOfHorses(), numberOfHorses);
+    }
 }
